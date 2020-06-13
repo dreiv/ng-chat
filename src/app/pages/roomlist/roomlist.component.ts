@@ -32,7 +32,6 @@ export class RoomlistComponent implements OnInit {
     public datepipe: DatePipe
   ) {
     this.nickname = localStorage.getItem('nickname');
-
     firebase
       .database()
       .ref('rooms/')
@@ -45,14 +44,19 @@ export class RoomlistComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  enterChatRoom(roomname: string): void {
+  enterChatRoom(roomname: string) {
     const chat = {
-      roomname: roomname,
-      nickname: this.nickname,
-      message: this.datepipe.transform(new Date(), 'dd/MM/yyyy HH:mm:ss'),
-      date: `${this.nickname} enter the room`,
-      type: 'join'
+      roomname: '',
+      nickname: '',
+      message: '',
+      date: '',
+      type: ''
     };
+    chat.roomname = roomname;
+    chat.nickname = this.nickname;
+    chat.date = this.datepipe.transform(new Date());
+    chat.message = `${this.nickname} enter the room`;
+    chat.type = 'join';
     const newMessage = firebase
       .database()
       .ref('chats/')
@@ -68,21 +72,18 @@ export class RoomlistComponent implements OnInit {
         let roomuser = [];
         roomuser = snapshotToArray(resp);
         const user = roomuser.find(x => x.nickname === this.nickname);
-
-        if (user) {
+        if (user !== undefined) {
           const userRef = firebase.database().ref('roomusers/' + user.key);
           userRef.update({ status: 'online' });
         } else {
-          const newroomuser = {
-            roomname,
-            nickname: this.nickname,
-            status: 'online'
-          };
+          const newroomuser = { roomname: '', nickname: '', status: '' };
+          newroomuser.roomname = roomname;
+          newroomuser.nickname = this.nickname;
+          newroomuser.status = 'online';
           const newRoomUser = firebase
             .database()
             .ref('roomusers/')
             .push();
-
           newRoomUser.set(newroomuser);
         }
       });
