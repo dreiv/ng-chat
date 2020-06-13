@@ -27,8 +27,7 @@ import { DatePipe } from '@angular/common';
     LoginComponent,
     RoomlistComponent,
     AddroomComponent,
-    ChatroomComponent,
-    DatePipe
+    ChatroomComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +45,7 @@ import { DatePipe } from '@angular/common';
     MatSnackBarModule,
     MatSidenavModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
