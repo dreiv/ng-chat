@@ -27,9 +27,14 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": ["src/styles/main.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/styles/main.scss"
+            ],
             "stylePreprocessorOptions": {
-              "includePaths": ["src/styles"]
+              "includePaths": [
+                "src/styles"
+              ]
             },
             "scripts": []
           },
@@ -92,9 +97,14 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": ["src/styles/main.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/styles/main.scss"
+            ],
             "stylePreprocessorOptions": {
-              "includePaths": ["src/styles"]
+              "includePaths": [
+                "src/styles"
+              ]
             },
             "scripts": []
           }
@@ -125,6 +135,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ng-chat"
 }
