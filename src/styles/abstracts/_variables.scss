@@ -1,0 +1,25 @@
+:root {
+  /* colors */
+  --primary: #007fa3;
+  --onPrimary: #fff;
+  --surface: #fff;
+  --onSurface: #000;
+  --background: #f6f8fa;
+
+  /* sizes */
+  --border-radius: 0.25rem;
+  --line-height: 1.618;
+
+  /* duration */
+  --short: 0.2s;
+  --medium: 0.5s;
+  --long: 1s;
+}
+
+/* Responsive Variables */
+$phone: '(max-width:767px)';
+$tablet: '(min-width:768px) and (max-width:1023px)';
+$tabletUp: '(min-width:768px)';
+$desktop: '(min-width:1024px) and (max-width:1439px)';
+$desktopUp: '(min-width:1024px)';
+$wide: '(min-width:1440px)';

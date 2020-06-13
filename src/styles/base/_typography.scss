@@ -1,0 +1,11 @@
+body {
+  color: var(--onSurface);
+  font-family: 'Roboto', 'Segoe UI', BlinkMacSystemFont, system-ui,
+    -apple-system sans-serif;
+  line-height: var(--line-height);
+
+  background-color: var(--surface);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
